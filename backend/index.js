@@ -30,7 +30,10 @@ function getProducts(currentPage = 1, filters) {
                     }),
                 600
             );
+            return;
         }
+
+        console.log(filters);
 
         const filterOpts = [
             {

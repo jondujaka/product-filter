@@ -1,0 +1,16 @@
+* {
+	font-family: $fontFamily;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 1.3rem;
+}
+
+h2 {
+	font-size: 1.6rem;
+	margin-bottom: $rootSpacing * 4;
+}

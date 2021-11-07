@@ -1,0 +1,17 @@
+.products {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	column-gap: $rootSpacing * 4;
+	row-gap: $rootSpacing * 4;
+	margin-bottom: $rootSpacing * 20;
+	position: relative;
+}
+
+.product-block {
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}

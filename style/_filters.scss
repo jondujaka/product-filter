@@ -1,0 +1,59 @@
+.filters-wrapper {
+	max-width: 400px;
+	margin-bottom: $rootSpacing * 10;
+}
+
+.single-filter {
+	margin: $rootSpacing * 4 0;
+	min-width: 400px;
+
+	h5 {
+		margin-top: 0;
+		font-size: 1.1rem;
+		margin-bottom: $rootSpacing * 2;
+	}
+}
+
+.price-range-track-wrapper {
+	height: 36px;
+	display: flex;
+	width: 100%;
+}
+.price-range-track {
+	height: 5px;
+	width: 100%;
+	border-radius: 4px;
+	align-self: center;
+}
+
+.price-range-thumb-wrapper {
+	height: 24px;
+	width: 18px;
+	background: #fff;
+	border: 1px solid grey;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 0 !important; // Override the library set "1", as it goes on top of our dropdowns
+}
+
+.price-range-thumb-label {
+	position: absolute;
+	bottom: -29px;
+	color: white;
+	background: grey;
+	padding: 4px;
+}
+
+.price-range-thumb-dash {
+	height: 12px;
+	width: 3px;
+}
+
+.controls {
+	margin: $rootSpacing * 4 0;
+
+	button {
+		margin-right: $rootSpacing * 2;
+	}
+}

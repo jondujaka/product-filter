@@ -26,11 +26,7 @@ const Filters = ({ filters, onChange }) => {
             <div className="filters">
                 {filtersKeys.map((key) =>
                     key === 'price' ? (
-                        <PriceFilter
-                            key={key}
-                            onChange={(val) => handleFilterChange(key, val)}
-                            filter={filters[key]}
-                        />
+                        'asd'
                     ) : (
                         <SingleFilter
                             key={key}

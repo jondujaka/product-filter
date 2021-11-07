@@ -2,14 +2,20 @@ import Select from 'react-select';
 import { Range, getTrackBackground } from 'react-range';
 import { useEffect, useState } from 'react';
 
-const SingleFilter = ({ filter, onChange }) => {
+const PriceFilter = ({ filter, onChange }) => {
     const MIN = filter.options[0];
     const MAX = filter.options[1];
     const STEP = 1;
 
+    const initRun = useRef(true);
     const [values, setValues] = useState([MIN, MAX]);
 
-    useEffect(() => onChange(values), [values]);
+    useEffect(() => {
+        if (!initRun.current) {
+            onChange(values);
+        }
+        initRun.current = true;
+    }, [values]);
 
     return (
         <div className="single-filter">
@@ -60,4 +66,4 @@ const SingleFilter = ({ filter, onChange }) => {
     );
 };
 
-export default SingleFilter;
+export default PriceFilter;

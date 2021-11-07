@@ -33,8 +33,6 @@ function getProducts(currentPage = 1, filters) {
             return;
         }
 
-        console.log(filters);
-
         const filterOpts = [
             {
                 name: 'color',

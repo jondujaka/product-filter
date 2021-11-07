@@ -10,8 +10,10 @@ import { useEffect, useState, useRef } from 'react';
 const Home = ({ data, filters }) => {
     const { items, hasNextPage } = data;
 
+    const initRun = useRef(true);
+
     const [currentPage, setCurrentPage] = useState(0);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState(items);
     const [showNextPage, setShowNextPage] = useState(hasNextPage);
     const [activeFilters, setActiveFilters] = useState();
@@ -33,7 +35,12 @@ const Home = ({ data, filters }) => {
         setActiveFilters(filters);
     };
 
-    useEffect(() => updateProducts(), [debouncedFilters, currentPage]);
+    useEffect(() => {
+        if (!initRun.current) {
+            updateProducts();
+        }
+        initRun.current = false;
+    }, [debouncedFilters, currentPage]);
 
     return (
         <Layout>

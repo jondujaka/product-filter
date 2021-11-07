@@ -13,7 +13,7 @@ const PriceFilter = ({ filter, onChange }) => {
         if (!initRun.current) {
             onChange(values);
         }
-        initRun.current = true;
+        initRun.current = false;
     }, [values]);
 
     return (

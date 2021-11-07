@@ -12,7 +12,7 @@ const ProductBlock = ({ product }) => {
             <h3>{productInfo.name}</h3>
             <h4> &euro;{price}</h4>
             {categories &&
-                categories.map((cat, i) => `${i !== 0 && `, `}${cat}`)}
+                categories.map((cat, i) => `${i !== 0 ? `, ` : ``}${cat}`)}
         </div>
     );
 };

@@ -1,6 +1,5 @@
-import Select from 'react-select';
 import { Range, getTrackBackground } from 'react-range';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const PriceFilter = ({ filter, onChange }) => {
     const MIN = filter.options[0];

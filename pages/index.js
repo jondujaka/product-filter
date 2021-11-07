@@ -68,7 +68,7 @@ const Home = ({ data, filters }) => {
     );
 };
 
-const simpleSlugify = (string) => string.replaceAll(' ', '-').toLowerCase();
+const simpleSlugify = (string) => string.replace(/\s+/g, '-').toLowerCase();
 export default Home;
 export async function getStaticProps() {
     const data = await getProducts();

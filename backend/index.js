@@ -10,6 +10,7 @@ function getProducts(currentPage = 1, filters) {
 
         let filterActive = false;
 
+        // Making sure there's filters before continuing
         if (filters) {
             Object.keys(filters).forEach((key) => {
                 if (filters[key].values.length) {
@@ -18,6 +19,8 @@ function getProducts(currentPage = 1, filters) {
             });
         }
 
+        // If there's no filters active, we return the unfiltered products,
+        // sliced based on the current page
         if (!filterActive) {
             setTimeout(
                 () =>
@@ -59,6 +62,9 @@ function getProducts(currentPage = 1, filters) {
             if (!data[i].node.colorFamily) {
                 continue;
             }
+
+            // A product is a "match" only if it matches every filter
+            // So we go through every filter, and call its matcher function
             let match = filterOpts.every((filter) => {
                 if (!filter.active) {
                     return true;
@@ -67,10 +73,14 @@ function getProducts(currentPage = 1, filters) {
             });
 
             if (match) {
+                // We go 1 over the PER_PAGE limit to check if there's more products.
+                // We don't return this extra product, but just set hasNextPage to true
+                // so that we know in the front-end
                 if (result.length === PER_PAGE) {
                     hasNextPage = true;
                     break;
                 }
+
                 if (matchIndex >= currentPage * PER_PAGE) {
                     result.push(data[i]);
                 }
@@ -81,6 +91,9 @@ function getProducts(currentPage = 1, filters) {
         setTimeout(() => resolve({ hasNextPage, items: result }), 600);
     });
 }
+
+// Goes through all the procuts and constructs
+// the filters with all the available options
 
 const getFilters = () => {
     let filters = {

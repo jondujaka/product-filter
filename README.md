@@ -1,7 +1,7 @@
 # Ask Phill Front-end Technical Assignemt
 Built on Next.js, deployed to Vercel.
 
-Live url: https://ask-phill.vercel.app
+Live url: https://askphill.jondujaka.com/
 
 To run, install dependencies with `npm i` then to start a local server `npm run dev`
 

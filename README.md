@@ -7,6 +7,8 @@ To run, install dependencies with `npm i` then to start a local server `npm run 
 
 ## Some notes
 
+Total work time: 5hr 50min
+
 In my opinion, this kind of data parsing should **never** be done on the front-end. The reasons for this being that:
 1. You're sending a big JSON file to the user's device
 2. The parsing speed would depend on the user device's power
@@ -15,6 +17,7 @@ In my opinion, this kind of data parsing should **never** be done on the front-e
 
 In real-life, products are usually managed on a CMS, so I would simply use the CMS endpoints to get the data that I need. The CMS would handle the actual filtering and returning of data based on filter parameters I would send.
 However, since without the data parsing aspect this task would be trivial, I created some sort of 'fake' backend that does it (with a forced timeout so it feels more real).
+If I **had to** further work on this without a backend, I would at minimum make the same function a serverless function (Or I would explore the possibility of using a service worker(uncharted territory for me)). Or, taking it further I would try to set up a back-end with a basic database to hold the products.
 
 ## Structure overview
 - backend/ - This holds the "fake" backend code that parses the data
